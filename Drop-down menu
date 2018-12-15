@@ -1,0 +1,41 @@
+一、下拉菜单
+1.功能：用于显示链接列表的可切换、有上下文的菜单
+2.实例：将下拉菜单触发器和下拉菜单都包裹在.dropdown里，或者另一个声明了position:relative;的元素。然后加入组成菜单的HTML代码
+<div class="dropdown">
+<button class="btn btn-default dropdown-toggle" type="button" id ="dropdownMenu1"data-toggle="dropdown" 
+aria-haspopup="true" aria-expanded="true">
+   Dropdown
+   </span class="caret"></span>
+   </button>
+   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+   <li><a herf ="#">Action</a></li>
+   <li><a herf ="#">Another action</a></li>
+   <li><a herf ="#">Something else here</a></li>
+   <li role="separetor" class="divider"></li>
+   <li><a herf="#">Separated link</a></li>
+  </ul>
+ </div>
+ 3.其中通过为下拉式菜单的父元素设置.dropup类，可以让菜单向上弹出（其中默认是向下弹出的）
+<div vlass="dropup">
+......此处同第二条的第5--16行
+</div>
+4.对齐功能
+B默认情况下，下拉菜单自动沿着父元素的上演和左侧被定为为100%宽度，为.dropdown-menu添加.dropdown-menu-right
+类可以让菜单右对齐
+其中可能需额外的定位May require addtitional positioning 
+其中不再建议使用 .pull-right  ，如需将菜单右对齐，请使.dropdown-menu-right类
+为什么不建议呢？ 这个我也不清楚，然后查阅相关资料有：没有给出具体原因，只是说这个是指定的细分规则，指定出来的原因是？
+未果
+代码：
+<ul class="dropdown-menu dropdown-menu-right" aria-labekkedby="dLabel">
+...
+</ul>
+5.标题：在任何一组下拉菜单中均可用过添加标题来标明一组动作
+代码：
+<ul class="dropdown-meun"aria-labelledby="dropdownMenu3">
+   ...
+   <li class="dropdown-header">Dropdown header</li>
+   ...
+</ul>
+此时这里会增加一个副标题，这个副标题不可点击
+
