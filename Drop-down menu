@@ -37,5 +37,52 @@ B默认情况下，下拉菜单自动沿着父元素的上演和左侧被定为�
    <li class="dropdown-header">Dropdown header</li>
    ...
 </ul>
-此时这里会增加一个副标题，这个副标题不可点击
+此时这里会增加一个副标题，这个副标题是不可点击的类型
+5.分割线：为下拉菜单添加一条分割线，用于将多个链接分组
+代码：
+<ul class="dropdown-meun" aria-labelledby="dropdownMenuDivider">
+   ...
+   <li role="seoarator" class="divider"></li>
+   ...
+</ul>
+这时会出现上下的分割线
+6.禁用的菜单项
+为下拉菜单中的<li>元素添加.disabled类，从而禁用相应的菜单项
+<ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+  <li><a herf="#">Regular link</a></li>
+  <li class="disabled"><a herf ="#">Disabed link</a></li>
+  <li><a herf="#">Another link</a></li>
+</ul>
+效果：其中的那个Disabled link 是灰色的，不可点击
+7.按钮组：通过按钮组容器吧一组按钮放在同一行里。通过与按钮插件联合使用，可以设置为单选框或多选框的样式和行为。
+其中的注意要点：
+a.按钮组中的工具提示和弹出框需要特别的设置：
+当为.btn-group中的元素应用工具提示或弹出框时，必须指定container:'body'选项，这样可以避免不必要的副作用
+（例如：工具提示或弹出框触发时，会让页面元素变宽和/或失去圆角）
+b.确保设置正确的role属性并提供一个label标签
+为了向使用辅助技术-如屏幕阅读器-的用户正确传达一正确的按钮分组，需要提供一个合数的role属性。
+对于按钮组合，应该是role="group",对于toolbar（工具栏）应该是role="toolbar"。
+一个例外是按钮组合只包含一个单一的控制元素或一个下拉菜单（比如实际情况，<button>元素组成的两端
+对其排列的按钮组）或下拉菜单。
+c.此外，按钮组和工具栏应给定一个明确的label标签，尽管设置了正确的role属性，但是大多数辅助技术将会不会正确的
+识读他们。在这下面的实例代码中，使用aria-label,但是，aria-labelledby也可以使用。
+基本实例：
+code：
+<div class="btn-group" role="group" aria-label="...">
+   <button type="button" class="btn btn-default">Left</button>
+   <button type="button" class="btn btn-default">Middle</button>
+   <button type="button" class="btn btn-default">Right</button>
+</div>
+8.按钮工具栏
+把一组<div class="btn-group">组合进一个<div vlass="btn-toolbar">中就可以做成更复杂的组件
+实例：
+code
+<div class="btn-toolbar" role="toolbar" aria-label="...">
+   <div class="btn-group" role="group" aria-label="...">...</div>
+   <div class="btn-group" role="group" aria-label="...">...</div>
+   <div class="btn-group" role="group" aria-label="...">...</div>
+</div>
+这里的这个案例实现失败，得请教请教，先留着；我知道了，看到后面演示，其中的...加入button按钮就行
+
+9.尺寸
 
